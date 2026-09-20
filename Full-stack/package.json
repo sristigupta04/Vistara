@@ -1,0 +1,27 @@
+{
+  "name": "airbnb-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.15.0",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "type-check": "turbo type-check",
+    "clean": "turbo clean",
+    "typecheck": "pnpm --recursive typecheck",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "docker:logs": "docker compose logs -f",
+    "docker:build": "docker compose build --no-cache",
+    "postinstall": "prisma skills sync || exit 0"
+  },
+  "devDependencies": {
+    "dotenv": "^17.4.2",
+    "prisma": "7.10.0",
+    "turbo": "^2.5.6"
+  },
+  "dependencies": {
+    "@prisma/client": "^7.10.0"
+  }
+}

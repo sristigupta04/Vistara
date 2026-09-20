@@ -1,0 +1,136 @@
+services:
+
+  # ==========================================
+  # WEB
+  # ==========================================
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: airbnb-web
+
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      NODE_ENV: production
+
+      DATABASE_URL: postgresql://airbnb:airbnb_password@postgres:5432/airbnb
+
+      REDIS_URL: redis://redis:6379
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+      redis:
+        condition: service_healthy
+
+    networks:
+      - airbnb-network
+
+
+  # ==========================================
+  # POSTGRESQL
+  # ==========================================
+
+  postgres:
+    image: postgres:17-alpine
+
+    container_name: airbnb-postgres
+
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: airbnb
+      POSTGRES_PASSWORD: airbnb_password
+      POSTGRES_DB: airbnb
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U airbnb -d airbnb"
+        ]
+
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+    networks:
+      - airbnb-network
+
+
+  # ==========================================
+  # REDIS
+  # ==========================================
+
+  redis:
+    image: redis:7-alpine
+
+    container_name: airbnb-redis
+
+    restart: unless-stopped
+
+    command:
+      [
+        "redis-server",
+        "--appendonly",
+        "yes"
+      ]
+
+    ports:
+      - "6379:6379"
+
+    volumes:
+      - redis_data:/data
+
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "redis-cli",
+          "ping"
+        ]
+
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+    networks:
+      - airbnb-network
+
+
+# ==========================================
+# VOLUMES
+# ==========================================
+
+volumes:
+
+  postgres_data:
+    driver: local
+
+  redis_data:
+    driver: local
+
+
+# ==========================================
+# NETWORK
+# ==========================================
+
+networks:
+
+  airbnb-network:
+    driver: bridge
