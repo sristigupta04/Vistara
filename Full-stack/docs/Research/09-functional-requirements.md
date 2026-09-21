@@ -61,7 +61,17 @@
 - **FR-DASH-02**: Host dashboard shows properties, bookings, verification status, requirements.
 - **FR-DASH-03**: Admin dashboard shows verification queue, mismatch report queue, risk-flagged cases, user/property lists.
 
-## 12. Day 9 Conclusion
+## 12. Parking (New — Gap 7)
+FR-PARK-01: Owner can list a parking space (location, availability window, price).
+FR-PARK-02: Guest can search parking spaces near a property or destination.
+FR-PARK-03: Guest can book a parking space; status follows PENDING/CONFIRMED/CANCELLED/COMPLETED, payment via existing Payment module.
+## 13.Experiences (New — Gap 8)
+FR-EXP-01: Provider can create an experience listing (title, description, location, duration, price, availability).
+FR-EXP-02: Guest can discover experiences tied to a destination or a booked property.
+FR-EXP-03: Guest can book an experience; payment reuses the existing Payment module.
+FR-EXP-04: Guest can review a completed experience, reusing the Review module's rating structure.
+ 
+## conculsion
 
 Verification requirements now match the roadmap's explicit exclusion of ID-upload verification, and trust/risk, recommendation, and review intelligence are represented as real, phased requirements rather than omitted.
 

@@ -1,69 +1,75 @@
 # Vistara — Day 3: Gap Analysis
 
-> Scope note: Narrows Day 2's finding (trust is invisible everywhere) into specific, buildable gaps. No new ideas introduced here — only sharpening what Day 1 and Day 2 already established.
+> Track: Full Stack / Product | Phase 1 — Research & Scope | Day 3/90
+> Updated: Parking and Experience Discovery added as Gaps 7-8, per explicit scope decision to reopen this part of the earlier future-roadmap.
+
+## Objective
+
+Convert Day 2's competitor research into a small set of specific, meaningful gaps for Vistara.
 
 ---
 
-## 1. Day 3 Objective
+## Gap 1 — Trust Visibility
+**Gap:** Traveller can't tell what was actually verified about a property/host before booking.
+**Opportunity:** Make verification status visible before booking.
 
-Convert "trust is invisible" into 5–7 gaps specific enough to design against. A gap only qualifies if it's:
-- Traceable to a problem named in Day 1
-- Confirmed absent (or weak) across competitors in Day 2
-- Buildable by a 2-person team without external dependencies that don't yet exist (e.g., no gap requiring a licensed verification API we haven't secured)
+## Gap 2 — Requirement Clarity
+**Gap:** Important conditions aren't an explicit, confirmed part of the booking decision.
+**Opportunity:** Surface requirements clearly, require confirmation, lock a snapshot.
+
+## Gap 3 — Expectation vs. Actual Experience
+**Gap:** No structured expectation-to-experience comparison exists.
+**Opportunity:** Dedicated mismatch reporting flow.
+
+## Gap 4 — Review Understanding
+**Gap:** Traveller has to read many reviews to understand specific aspects.
+**Opportunity:** Structure reviews by aspect (cleanliness, location, accuracy, communication, value).
+
+## Gap 5 — Price Transparency
+**Gap:** Guests can't easily tell if a price is fair.
+**Opportunity:** Clear price breakdown before payment.
+
+## Gap 6 — Trust-Aware Discovery
+**Gap:** No competitor connects AI ranking to trust/verification signals.
+**Opportunity:** Factor trust/risk model output into ranking once it exists (Phase 6-8).
+
+## Gap 7 — Parking Access (New)
+**Existing pattern:** Accommodation platforms treat parking as the guest's own problem, outside the booking flow entirely.
+**Gap:** Travellers arriving by vehicle often don't know if parking exists near a property, or have to arrange it separately, sometimes discovering the problem only on arrival.
+**Vistara opportunity:** Let parking space owners list availability near demand areas (properties, destinations), and let guests search/book parking alongside or independent of a stay.
+```
+Property/Destination -> Nearby Parking Search -> Availability -> Book
+```
+
+## Gap 8 — Destination Experience Discovery (New)
+**Existing pattern:** Where experience marketplaces exist (e.g., Airbnb Experiences), they're a separate discovery flow from accommodation — different search, different booking path.
+**Gap:** A guest who's booked a stay has to leave the platform (or use a disconnected in-app section) to find local activities, food experiences, or guided tours tied to that destination.
+**Vistara opportunity:** Let experience providers list bookable local experiences, discoverable in the same flow as the guest's stay/destination — not a separate marketplace bolted on.
+```
+Guest books stay -> Sees relevant destination experiences -> Books directly
+```
 
 ---
 
-## 2. The 6 Confirmed Gaps
+## Gap Summary
 
-### Gap 1 — Verification is invisible to the guest
-Competitors verify hosts/businesses on the backend, but the guest never sees *what* was checked. There's no listing-level trust display.
-
-### Gap 2 — Reviews aren't tied to verified stays
-Anyone can review; nothing distinguishes a review from an actual completed, verified booking. "Verified Stay" as a visible tag does not exist as standard practice.
-
-### Gap 3 — No structured post-stay mismatch reporting
-If a listing doesn't match reality, a guest's only options are a public review or a support ticket — no dedicated "claim vs. experience" reporting flow that feeds back into the platform's trust data.
-
-### Gap 4 — Host requirements aren't confirmed or recorded at booking time
-Guests may not see house rules/requirements clearly before paying, and there's no record of what was agreed to at the moment of booking (useful for disputes on both sides).
-
-### Gap 5 — Price transparency is inconsistent
-Fees often appear late in checkout; no easy way to gauge whether a price is reasonable for the category/location.
-
-### Gap 6 — AI discovery isn't connected to trust
-Where AI-assisted search/recommendation exists (Agoda, emerging elsewhere), it optimizes for price/preference match — never for trust signals as a ranking factor.
-
----
-
-## 3. Gap Prioritization
-
-| Gap | Directly buildable in MVP? | Core to thesis? |
+| # | Gap | Core User Problem |
 |---|---|---|
-| 1. Verification visibility | Yes | Yes — central |
-| 2. Verified Stay reviews | Yes | Yes — central |
-| 3. Mismatch reporting | Yes | Yes — central |
-| 4. Requirement confirmation + snapshot | Yes | Yes — supporting |
-| 5. Price transparency | Yes (basic breakdown only) | Secondary |
-| 6. Trust-aware AI ranking | Partial (basic version only) | Secondary, Major-leaning |
+| 1 | Trust Visibility | What exactly can I trust? |
+| 2 | Requirement Clarity | What am I agreeing to? |
+| 3 | Expectation vs. Experience | Was the stay as presented? |
+| 4 | Review Understanding | What do reviews actually tell me? |
+| 5 | Price Transparency | Is this price fair? |
+| 6 | Trust-Aware Discovery | Does search account for trust, not just price/preference? |
+| 7 | Parking Access | Where do I park when I arrive? |
+| 8 | Destination Experience Discovery | What can I do here, without leaving the app? |
 
-Gaps 1–4 form the actual backbone of Vistara's MVP. Gaps 5–6 are real but smaller — basic versions belong in MVP, advanced versions belong later (Money Radar, trust-aware AI ranking).
+## Still Explicitly Parked (Unchanged)
 
----
+Full trip planning, group travel, travel agency tours, hidden-gem/local-guide marketplace, coupons/offers, location-radius intelligence remain excluded — logged in `Vistara-Major-Future-Roadmap.md`. Only Parking and Experience Discovery were reopened, on an explicit decision — nothing else.
 
-## 4. What's Deliberately Left Out
+## Day 3 Conclusion
 
-Not every gap identified in earlier (now-superseded) research gets carried forward:
+> **Eight gaps: six original trust-thesis gaps, plus Parking Access and Destination Experience Discovery, added after an explicit scope decision. These become inputs for Day 4.**
 
-- **Regulatory compliance** — a real gap, but not a guest-facing trust gap; it's a legal/ops concern for later stage, not core differentiation.
-- **Photo/image authenticity detection** — real gap, but requires ML capability not yet built; parked for Major.
-- **Fraud/risk scoring** — same as above; the MVP handles this through admin review, not automated scoring.
-
-These aren't rejected — they're sequenced correctly instead of front-loaded.
-
----
-
-## 5. Day 3 Conclusion
-
-> **Vistara's MVP has four core gaps to solve (verification visibility, verified reviews, mismatch reporting, requirement confirmation) and two supporting gaps to address at a basic level (price transparency, trust-aware discovery). Everything else is Major-phase or out of scope.**
-
-Next: **Day 4 — Users & personas**, defining who actually experiences these six gaps (guest, host, admin) before designing solutions.
+Next: Day 4 — Users & Personas.

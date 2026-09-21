@@ -17,6 +17,10 @@ The 90-day delivery has two horizons: a **working transactional loop** (search �
 - Payment (Razorpay, test mode)
 - Basic reviews (star + structured sub-ratings)
 
+Supply-Side Modules (Phase 4, added on explicit scope decision — Gaps 7-8)
+Parking: owner lists a parking space (location, availability, price); guest searches/books near a property or destination. Basic listing + booking only — no real-time occupancy sensors, no dynamic pricing.
+Experiences: provider lists a local experience (title, description, location, duration, price, availability); guest discovers/books alongside their stay. Reuses Payment and Review infrastructure. Basic marketplace only — no multi-day packages.
+
 ### Trust Layer (Phase 4 foundation, ML built out Phase 6–7)
 - **Property/photo verification** — duplicate image detection and listing-consistency checks (ML, Phase 7). **Not** host ID-document upload — that is explicitly out of scope per the roadmap.
 - Host requirements definition, guest confirmation, requirement snapshot (Phase 4)
