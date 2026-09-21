@@ -157,7 +157,7 @@ The ML service contains:
 * Photo / Property Verification
 * Explainable Recommendations
 
-The platform follows a **modular monolith + separate ML service** architecture.
+The platform follows a **separate ML service** architecture.
 The Node.js API handles the core marketplace while the FastAPI service provides
 ML predictions and intelligence.
 
