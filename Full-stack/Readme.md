@@ -1,6 +1,3 @@
-Haan. Tumhare diye hue structure aur jo current architecture humne discuss kiya hai, **dono ko merge karke ek clean final structure** banana chahiye.
-
-Ek important correction: uploaded 90-day document mein Day 15 abhi bhi **“Modular monolith + separate FastAPI ML service”** likha hua hai, jabki tumne current project decision mein clearly **microservices architecture** choose kiya hai. Isliye neeche main **current microservices decision** ko base bana raha hoon, aur बाकी Day 15–21 requirements preserve kar raha hoon. 
 
 # Vistara — Final Monorepo Structure
 
