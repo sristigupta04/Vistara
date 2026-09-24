@@ -799,3 +799,148 @@ VISTARA
 **Current Phase:** Phase 1 — Research & Planning  
 **Current Focus:** ML/Data Gap Analysis and research completion  
 **Next Stage:** ML system design → dataset preparation → feature engineering → baseline models → model development
+
+
+---
+
+# 18. Current Vistara Ecosystem Direction — 24 September 2026
+
+The Data Science / ML track now supports the larger Vistara direction while preserving the core accommodation intelligence foundation.
+
+## Product Structure
+
+```text
+HOME
+  ↓
+Accommodation marketplace
+  ↓
+EXPLORE
+  ↓
+Area + Date + Guests + Interest
+  ↓
+Destination discovery
+  ↓
+LOCAL PLAN
+  ↓
+Paid unlock
+  ↓
+Exact locations + details + maps + routes
+  ↓
+Self Explore / Guide / Services
+  ↓
+Multi-stop / Intercity journey
+```
+
+## Home
+
+Home supports multiple accommodation types:
+
+- Homes
+- Apartments
+- Villas
+- Hotels
+- Resorts
+- Hostels
+- Dormitories
+- Guest Houses
+- Homestays
+- Cottages
+- Farm Stays
+- Other supported accommodation types
+
+Hotels may support Overnight + 3 Hours + 6 Hours + 9 Hours. The hourly option is currently hotel-only.
+
+## Explore
+
+Explore is the destination-discovery entry point.
+
+Inputs:
+
+- Area / where the user is staying
+- Date
+- Guests
+- Interest / priority
+
+Categories may include food, places, restaurants, shopping, cafes, experiences, events, culture, religious places, nature, local markets and other destination-specific activities.
+
+## Local Plan
+
+Local Plan is a paid layer inside Explore.
+
+Before purchase:
+- Useful preview
+- General area context
+- Plan theme / highlights
+- Price and duration
+
+After purchase:
+- Exact locations
+- Place / shop details
+- Full maps
+- Directions
+- Routes
+- Suggested sequence / plan details
+
+## Services
+
+Services can support:
+
+- Bike
+- Auto
+- Car
+- Multi-stop local journeys
+- Intercity travel
+- One-way / round-trip flows
+
+A future transport intelligence layer can use itinerary, distance, availability and trip context.
+
+## Guide
+
+Guidance remains connected to Explore and can be offered as an optional human-assisted travel mode.
+
+## Current DS / ML Foundation
+
+Completed:
+
+- Recommendation filtering
+- Weighted scoring
+- Ranking
+- Explainable recommendation reasons
+- Property verification score
+- Verification status and reasons
+- `recommender.py`
+- `verifier.py`
+- FastAPI ML service
+- `/ml/recommend`
+- `/ml/verify`
+- `/ml/health`
+- CORS configuration
+
+Current development direction:
+
+- Larger / more realistic accommodation datasets
+- Photo verification / image intelligence
+- Review intelligence
+- Explore recommendation
+- Local Plan / itinerary intelligence
+- Personalization
+- Transport intelligence
+
+## Data Principles
+
+- Keep real, public, provider-provided and synthetic/demo data distinguishable.
+- Record source and licensing information for external data.
+- Do not invent missing real-world property values.
+- Use safe and appropriately collected data for ML.
+
+## Repository / Scope Principle
+
+The original 90-day roadmap remains the implementation baseline. The expanded ecosystem direction is a product roadmap that can be implemented progressively without forcing every future feature into the current milestone.
+
+## Phase 1 Status
+
+All Data Science / ML Phase 1 Days 1–14 are completed. The research establishes the ML problem definitions, recommendation/ranking direction, trust/risk scope, review intelligence, property/photo verification, explainability, dataset strategy, evaluation requirements and ML API direction.
+
+**Current principle:**
+
+> Start simple → establish a baseline → evaluate → improve → deploy.
